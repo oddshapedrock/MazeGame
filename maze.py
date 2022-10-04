@@ -161,6 +161,7 @@ def reset():
     start = tur.numinput("Start","1) Resume\n2) New Game\n3) Exit", 1, 1, 3)
     if start == 3:
         tur.clear()
+        tur.bye()
         return
     if start == 2:
         getPos(setting.exit[0], setting.exit[1])[0]["isExit"] = False
@@ -179,6 +180,7 @@ def game():
 
     if start == 6:
         tur.clear()
+        tur.bye()
         return
     if start == 5:
         tur.clear()
