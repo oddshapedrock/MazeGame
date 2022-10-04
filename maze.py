@@ -541,12 +541,6 @@ def game():
             else:
                 values.space = 2
 
-        s1 = Snake(0, [1, 1])
-        start = timeit.default_timer()
-        for i in range(1000000):
-            possibleMove()
-        end = timeit.default_timer()
-        print(end - start)
 
         #continuously creates new snakes at different starting locations
         while values.space < 1:

@@ -83,12 +83,10 @@ class GenerateMaze():
         snake = self.snake
         snake["location"] = starting_location
         index = 0
-        loop_number = (self.maze_size[0] * self.maze_size[1]) -1
-        for _ in range(loop_number):
+        loop_number = self.maze_size[0] * self.maze_size[1]
+        for _ in range(loop_number -1):
             self.__new_direction(self.__get_possible_moves())
             while self.snake["direction"] == -1:
-                if index == 0:
-                    random.shuffle(saved_locations)
                 self.snake["location"] = saved_locations[index]
                 self.__new_direction(self.__get_possible_moves())
                 index += 1
@@ -107,6 +105,9 @@ class GenerateMaze():
     def generate_tiny(self, maze_size):
         """# TODO: """
         generate(maze_size)
+
+maze = GenerateMaze().generate([400, 400])
+print(maze)
 
 _inst = GenerateMaze()
 generate = _inst.generate
