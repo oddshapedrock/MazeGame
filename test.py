@@ -7,7 +7,7 @@ import sys
 sys.path.insert(0, os.getcwd() + '/mazes')
 
 def game():
-    grid_size = [150, 150]
+    grid_size = [1000, 1000]
 
     grid_map = generate(grid_size)
     values = {"player_pos": [0, 0], "y_range": [0, 0], "x_range": [0, 0], "exit_loc": [grid_size[0] - 1, grid_size[1] -1]}
