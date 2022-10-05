@@ -106,7 +106,19 @@ class GenerateMaze():
 
     def generate_tiny(self, maze_size):
         """# TODO: """
-        generate(maze_size)
+        tiny_map = []
+        grid_map = generate(maze_size)
+        for index, grid in enumerate(grid_map):
+            tiny_map.append([])
+            for cell in grid:
+                string = ""
+                for index2 in range(4):
+                    if cell["walls"][index2]:
+                        string += "1"
+                    else:
+                        string += "0"
+                tiny_map[index].append(string)
+        return tiny_map  
 
 _inst = GenerateMaze()
 generate = _inst.generate
